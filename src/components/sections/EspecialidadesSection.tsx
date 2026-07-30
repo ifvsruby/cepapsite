@@ -36,7 +36,7 @@ export function EspecialidadesSection() {
   };
 
   return (
-    <section className="bg-cepap-white py-24 relative group">
+    <section id="especialidades" className="bg-cepap-white py-24 relative group">
       <div className="flex flex-col justify-center relative">
         <div className="container mx-auto px-6 mb-8 md:mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <h2 className="font-serif text-3xl md:text-5xl text-cepap-deep">

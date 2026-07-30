@@ -110,7 +110,7 @@ export function Header() {
       >
         <nav className="flex flex-col gap-6 text-lg font-medium text-cepap-deep">
           <Link href="/" onClick={() => setMobileMenuOpen(false)}>Início</Link>
-          <Link href="/especialidades" onClick={() => setMobileMenuOpen(false)}>Especialidades</Link>
+          <Link href="/#especialidades" onClick={() => setMobileMenuOpen(false)}>Especialidades</Link>
           <Link href="/equipe" onClick={() => setMobileMenuOpen(false)}>Equipe</Link>
           <Link href="/quem-somos" onClick={() => setMobileMenuOpen(false)}>Quem Somos</Link>
           <Link href="/unidades" onClick={() => setMobileMenuOpen(false)}>Unidades</Link>
