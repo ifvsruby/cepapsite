@@ -29,12 +29,10 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        mobileMenuOpen
-          ? "bg-white py-4"
-          : isScrolled
-          ? "bg-white/95 backdrop-blur-md py-3 shadow-sm"
-          : "bg-white/95 backdrop-blur-md py-5"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white ${
+        isScrolled
+          ? "py-3 shadow-sm"
+          : "py-5"
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
