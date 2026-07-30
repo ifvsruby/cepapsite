@@ -34,7 +34,7 @@ export function Header() {
           ? "bg-white py-4"
           : isScrolled
           ? "bg-white/95 backdrop-blur-md py-3 shadow-sm"
-          : "bg-transparent py-5"
+          : "bg-white/95 backdrop-blur-md py-5"
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
