@@ -43,33 +43,30 @@ export function EspecialidadesSection() {
             Um cuidado específico para cada necessidade.
           </h2>
           
-          {/* Mobile Hint */}
-          <div className="md:hidden flex items-center gap-2 text-cepap-primary opacity-80 text-sm font-medium">
-            <ArrowRight className="w-4 h-4 animate-pulse" />
-            Deslize para ver mais
-          </div>
-
-          {/* Desktop Controls */}
-          <div className="hidden md:flex items-center gap-4">
-            <button 
-              onClick={scrollLeft}
-              className="w-12 h-12 rounded-full border border-cepap-mist text-cepap-deep hover:bg-cepap-mist/50 transition-colors flex items-center justify-center outline-none focus:outline-none"
-              aria-label="Rolar para a esquerda"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-            <button 
-              onClick={scrollRight}
-              className="w-12 h-12 rounded-full border border-cepap-mist text-cepap-deep hover:bg-cepap-mist/50 transition-colors flex items-center justify-center outline-none focus:outline-none"
-              aria-label="Rolar para a direita"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
-          </div>
+          {/* Title only */}
         </div>
 
-        {/* Horizontal Scroll Native CSS */}
-        <div className="w-full overflow-hidden md:container md:mx-auto md:px-6">
+        {/* Horizontal Scroll Wrapper */}
+        <div className="w-full relative group/carousel md:container md:mx-auto md:px-6">
+          
+          {/* Left Button Overlay */}
+          <button 
+            onClick={scrollLeft}
+            className="absolute left-2 md:-left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm border border-cepap-mist shadow-lg text-cepap-deep hover:bg-white hover:text-cepap-primary hover:scale-105 transition-all flex items-center justify-center outline-none focus:outline-none opacity-100 md:opacity-0 group-hover/carousel:opacity-100 disabled:opacity-0"
+            aria-label="Rolar para a esquerda"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+
+          {/* Right Button Overlay */}
+          <button 
+            onClick={scrollRight}
+            className="absolute right-2 md:-right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm border border-cepap-mist shadow-lg text-cepap-deep hover:bg-white hover:text-cepap-primary hover:scale-105 transition-all flex items-center justify-center outline-none focus:outline-none opacity-100 md:opacity-0 group-hover/carousel:opacity-100 disabled:opacity-0"
+            aria-label="Rolar para a direita"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+
           <div 
             ref={scrollRef}
             className="flex gap-6 px-6 md:px-0 pb-12 overflow-x-auto snap-x snap-mandatory hide-scrollbar md:justify-start"
