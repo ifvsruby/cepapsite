@@ -17,18 +17,7 @@ export function ManifestoSection() {
     const mm = gsap.matchMedia();
     
     mm.add("all", () => {
-      // Parallax effect on background image
-      gsap.to(".manifesto-bg", {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true,
-        },
-        y: "20%",
-        ease: "none"
-      });
-      
+      // Removed Parallax effect as per user request
       // Simple fade up for the glass card
       gsap.from(".manifesto-card", {
         scrollTrigger: {
@@ -47,8 +36,8 @@ export function ManifestoSection() {
 
   return (
     <section ref={sectionRef} className="relative py-32 md:py-48 overflow-hidden bg-cepap-deep flex items-center justify-center">
-      {/* Background Image with Parallax */}
-      <div className="absolute inset-0 w-full h-[120%] -top-[10%] z-0">
+      {/* Background Image (Static) */}
+      <div className="absolute inset-0 w-full h-full z-0">
         <Image
           src="/manifesto-bg.jpg"
           alt="Ambiente abstrato acolhedor"
