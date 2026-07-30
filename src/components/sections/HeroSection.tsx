@@ -1,16 +1,12 @@
 "use client";
 
 import React, { Suspense } from "react";
-import dynamic from "next/dynamic";
+
 import { Button } from "@/components/ui/button";
 import { siteData } from "@/data/siteData";
 import { ArrowRight, MessageCircle } from "lucide-react";
 
-// Lazy load the 3D scene to prioritize initial content render and avoid SSR issues
-const HeroScene = dynamic(() => import("@/components/three/HeroScene").then(m => m.HeroScene), { 
-  ssr: false,
-  loading: () => <div className="absolute inset-0 bg-gradient-to-b from-cepap-mist/50 to-transparent z-[-1]" />
-});
+import { HeroScene } from "@/components/three/HeroScene";
 
 export function HeroSection() {
   const scrollToOrientador = () => {
