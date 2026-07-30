@@ -16,7 +16,7 @@ export function ManifestoSection() {
   useGSAP(() => {
     const mm = gsap.matchMedia();
     
-    mm.add("(min-width: 768px)", () => {
+    mm.add("all", () => {
       // Parallax effect on background image
       gsap.to(".manifesto-bg", {
         scrollTrigger: {
@@ -53,8 +53,9 @@ export function ManifestoSection() {
           src="/manifesto-bg.jpg"
           alt="Ambiente abstrato acolhedor"
           fill
-          className="manifesto-bg object-cover opacity-60 mix-blend-screen"
-          priority={false}
+          className="manifesto-bg object-cover object-center md:object-top opacity-60 mix-blend-screen"
+          priority={true}
+          quality={90}
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-cepap-deep/40 mix-blend-multiply" />

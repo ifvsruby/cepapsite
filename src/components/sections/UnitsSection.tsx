@@ -30,7 +30,6 @@ export function UnitsSection() {
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }}
-                  loading="lazy"
                   allowFullScreen
                   referrerPolicy="no-referrer-when-downgrade"
                   src={`https://maps.google.com/maps?q=${encodeURIComponent(location.address)}&t=&z=15&ie=UTF8&iwloc=&output=embed`}
