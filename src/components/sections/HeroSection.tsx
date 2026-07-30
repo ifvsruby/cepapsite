@@ -17,6 +17,9 @@ export function HeroSection() {
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-24">
       {/* 3D Canvas Background */}
       <HeroScene />
+      
+      {/* Gradient to fade out the 3D scene at the bottom for legibility of trust elements */}
+      <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#F7FAF9] to-transparent z-0 pointer-events-none"></div>
 
       {/* Content */}
       <div className="container mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
