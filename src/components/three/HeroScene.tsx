@@ -11,8 +11,14 @@ export function HeroScene() {
   const containerRef = React.useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    setShouldRender(true);
+    // Only render on desktop to save mobile performance
+    const checkMobile = () => window.innerWidth > 768;
+    setShouldRender(checkMobile());
     
+    // Handle resize to mount/unmount if crossing breakpoint
+    const handleResize = () => setShouldRender(checkMobile());
+    window.addEventListener('resize', handleResize);
+
     // Performance optimization: Stop rendering frames when out of view
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -32,7 +38,7 @@ export function HeroScene() {
   }, []);
 
   return (
-    <div ref={containerRef} className="canvas-container">
+    <div ref={containerRef} className="canvas-container hidden md:block">
       {shouldRender && (
         <Canvas 
           frameloop={inView ? "always" : "demand"} 
